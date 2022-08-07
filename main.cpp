@@ -36,7 +36,7 @@ bool filasValidas(vector<vector<char>> board){
     return res;
 }
 
-vector<vector<char>> transponer(vector<vector<char>> m){
+void transponer(vector<vector<char>> &m){
     vector<vector<char>> m0 = m;
     int i = 0;
     int j = 0;
@@ -49,12 +49,11 @@ vector<vector<char>> transponer(vector<vector<char>> m){
             j = 0;
         }
     }
-    return m;
 }
 
 bool columnasValidas(vector<vector<char>> board){
-    vector<vector<char>> boardColumna = transponer(board);
-    bool res = filasValidas(boardColumna);
+    transponer(board);
+    bool res = filasValidas(board);
     return res;
 }
 
