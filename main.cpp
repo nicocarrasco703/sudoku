@@ -1,5 +1,4 @@
-//#include <iostream>
-#include <utility>
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -37,8 +36,8 @@ bool filasValidas(vector<vector<char>> board){
     return res;
 }
 
-void transponer(vector<vector<char>> &m){
-    vector<vector<char> > m0 = m;
+vector<vector<char>> transponer(vector<vector<char>> m){
+    vector<vector<char>> m0 = m;
     int i = 0;
     int j = 0;
     while(i < m.size()){
@@ -50,10 +49,11 @@ void transponer(vector<vector<char>> &m){
             j = 0;
         }
     }
+    return m;
 }
 
 bool columnasValidas(vector<vector<char>> board){
-//    vector<vector<char>> boardColumna = transponer(board);
+    vector<vector<char>> boardColumna = transponer(board);
     bool res = filasValidas(boardColumna);
     return res;
 }
